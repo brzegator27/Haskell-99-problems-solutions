@@ -18,3 +18,8 @@ elementAt _ [] = error "Out of bound"
 elementAt idx (x:xs)
   | idx == 1 = x
   | otherwise = elementAt (idx - 1) xs
+
+elementAt' :: Int -> [a] -> a
+elementAt' 1 (x:_) = x
+elementAt' idx (_:xs) = elementAt (idx - 1) xs
+elementAt' _ _ = error "Out of bound"
