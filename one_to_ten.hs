@@ -27,5 +27,4 @@ elementAt' _ _ = error "Out of bound"
 
 myLength :: [a] -> Int
 myLength [] = 0
-myLength [x] = 1
-myLength (x:xs) = 1 + myLength xs
+myLength (_:xs) = 1 + myLength xs
