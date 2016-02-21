@@ -11,3 +11,10 @@ myButLast [] = Nothing
 myButLast [x] = Nothing
 myButLast [x,y] = Just x
 myButLast (x:y:xs) = myButLast (y:xs)
+
+
+elementAt :: Int -> [a] -> a
+elementAt _ [] = error "Out of bound"
+elementAt idx (x:xs)
+  | idx == 1 = x
+  | otherwise = elementAt (idx - 1) xs
